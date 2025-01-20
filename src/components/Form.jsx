@@ -142,7 +142,6 @@ export default function Form({ value, id }) {
     //   create new trip
     const [tripDestination, setTripDestination] = useState("");
     const [tripDuration, setTripDuration] = useState("");
-    const [tripPrice, setTripPrice] = useState("");
     const [tripImage, setTripImage] = useState("");
 
     const handleAddTrip = (e) => {
@@ -155,7 +154,6 @@ export default function Form({ value, id }) {
         id: trips.length + 1,
         destination: tripDestination,
         duration: tripDuration,
-        price: tripPrice,
         img: tripImage,
       };
 
@@ -166,7 +164,6 @@ export default function Form({ value, id }) {
       // Reset i campi del form
       setTripDestination("");
       setTripDuration("");
-      setTripPrice("");
       setTripImage("");
     };
 
@@ -177,7 +174,7 @@ export default function Form({ value, id }) {
           className={showForm ? " row  g-3" : "d-none"}
           onSubmit={handleAddTrip}
         >
-          <div className="col-12 col-md-6 col-lg-4 col-xl-3">
+          <div className="col-12 col-md-6 col-lg-3 col-xl-4">
             <input
               className="form-control"
               placeholder="Destinazione"
@@ -187,7 +184,7 @@ export default function Form({ value, id }) {
               required
             />
           </div>
-          <div className="col-12 col-md-6 col-lg-4 col-xl-3">
+          <div className="col-12 col-md-6 col-lg-3 col-xl-4">
             <input
               className="form-control"
               placeholder="Durata in giorni"
@@ -197,17 +194,8 @@ export default function Form({ value, id }) {
               required
             />
           </div>
-          <div className="col-12 col-md-6 col-lg-4 col-xl-3">
-            <input
-              className="form-control"
-              placeholder="Prezzo"
-              type="number"
-              value={tripPrice}
-              onChange={(e) => setTripPrice(e.target.value)}
-              required
-            />
-          </div>
-          <div className="col-12 col-md-6 col-lg-12 col-xl-3 ">
+
+          <div className="col-12 col-md-6 col-lg-12 col-xl-4 ">
             <input
               className="form-control"
               placeholder="Immagine"
